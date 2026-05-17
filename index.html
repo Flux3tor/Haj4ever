@@ -1,169 +1,245 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Haj4ever, Build something. Get a Blåhaj.</title>
-  <meta name="description" content="A Hack Club YSWS where you build Blåhaj-related projects and get a real IKEA Blåhaj shipped to you." />
-  <link rel="stylesheet" href="style.css" />
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-    }
-  }
-  </script>
-</head>
-<body>
-
-<div id="loader">
-  <div class="shark-icon">🦈</div>
-  <p>Loading Haj4ever...</p>
-  <span id="loader-pct">0%</span>
-</div>
-
-<canvas id="bg"></canvas>
-
-<div id="content">
-
-  <section id="hero">
-    <h1 class="hero-title">Haj<span>4ever</span></h1>
-    <p class="hero-sub">build blåhaj projects &bull; get a blåhaj</p>
-    <div class="hero-actions">
-      <a href="https://haj4ever.fillout.com/rsvp" target="_blank" rel="noopener" class="btn-primary">
-        RSVP Now
-      </a>
-      <a href="https://hackclub.enterprise.slack.com/archives/C0ATRK4G5NY" target="_blank" rel="noopener" class="btn-ghost">
-        #haj4ever
-      </a>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="section reveal">
-      <span class="section-label">01. what is this</span>
-      <h2 class="section-title">you ship a blåhaj project.<br/>we ship you a blåhaj.</h2>
-      <div class="divider"></div>
-      <p class="section-body">
-        Haj4ever is a Hack Club YSWS (You Ship, We Ship). Build anything related to Blåhaj,
-        track your hours with Hackatime, and Hack Club will mail you a real IKEA Blåhaj shark.
-        Free international shipping. No catch.
-      </p>
-    </div>
-  </section>
-
-  <section id="how">
-    <div class="section">
-      <span class="section-label reveal">02. how it works</span>
-      <h2 class="section-title reveal">three steps to your shark.</h2>
-      <div class="cards">
-        <div class="card">
-          <div class="card-title">1. build something</div>
-          <div class="card-body">
-            Make any Blåhaj-related project, software, hardware, art, game, whatever you want.
-            It just has to be made by you, not vibe-coded.
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-title">2. track your hours</div>
-          <div class="card-body">
-            Log your time using Hackatime. You need around 7-8 hours of tracked work.
-            If you're in a team, everyone needs their own commits and hours.
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-title">3. get your blåhaj</div>
-          <div class="card-body">
-            Submit your project, we review it, and if it's good Hack Club ships you
-            a real IKEA Blåhaj straight to your door.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="rules">
-    <div class="section reveal">
-      <span class="section-label">03. rules</span>
-      <h2 class="section-title">the fine print.</h2>
-      <div class="divider"></div>
-      <div class="rules-list">
-        <div class="rule-item">
-          <div class="rule-dot"></div>
-          Open to teenagers aged 13-18. You'll need to verify your age (student or government ID) before we ship.
-        </div>
-        <div class="rule-item">
-          <div class="rule-dot"></div>
-          Your project has to be Blåhaj-related. Software, hardware, art, anything goes as long as it's themed.
-        </div>
-        <div class="rule-item">
-          <div class="rule-dot"></div>
-          No vibe coding. AI can help (max 30% usage) but the project needs to be mostly yours. Declare any AI use in your submission.
-        </div>
-        <div class="rule-item">
-          <div class="rule-dot"></div>
-          No double-dipping: you can't submit the same project to another Hack Club YSWS.
-        </div>
-        <div class="rule-item">
-          <div class="rule-dot"></div>
-          Teams of up to 5 are cool. Each member needs separate commits and Hackatime hours.
-        </div>
-        <div class="rule-item">
-          <div class="rule-dot"></div>
-          Hack Club covers international shipping. Customs fees depend on your country.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="links">
-    <div class="section reveal">
-      <span class="section-label">04. join in</span>
-      <h2 class="section-title">ready to build?</h2>
-      <div class="divider"></div>
-      <p class="section-body">
-        RSVP to get started, then hop in our Slack channel for updates, help, and to show off what you're making.
-      </p>
-      <div class="links-row">
-        <a href="https://haj4ever.fillout.com/rsvp" target="_blank" rel="noopener" class="btn-primary">
-          RSVP Now
-        </a>
-        <a href="https://hackclub.enterprise.slack.com/archives/C0ATRK4G5NY" target="_blank" rel="noopener" class="btn-ghost">
-          #haj4ever on Slack
-        </a>
-        <a href="https://hackclub.enterprise.slack.com/archives/C0ATMEQQ60K" target="_blank" rel="noopener" class="btn-ghost">
-          #haj4ever-help
-        </a>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<footer>
-  made with 🦈 by <a href="https://hackclub.enterprise.slack.com/team/U0A6A0J7UE6" target="_blank" rel="noopener">Flux3tor</a> for <a href="https://hackclub.com" target="_blank" rel="noopener">Hack Club</a> &bull; Haj4ever
-</footer>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        if (entry.target.classList.contains('card') || entry.target.classList.contains('rule-item')) {
-          const siblings = Array.from(entry.target.parentElement.children);
-          const idx = siblings.indexOf(entry.target);
-          setTimeout(() => entry.target.classList.add('visible'), idx * 100);
-        } else {
-          entry.target.classList.add('visible');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haj4ever, Build something. Get a Blåhaj.</title>
+    <meta
+      name="description"
+      content="A Hack Club YSWS where you build Blåhaj-related projects and get a real IKEA Blåhaj shipped to you."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
         }
-        observer.unobserve(entry.target);
       }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal, .card, .rule-item').forEach(el => observer.observe(el));
-</script>
+    </script>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="shark-icon">🦈</div>
+      <p>Loading Haj4ever...</p>
+      <span id="loader-pct">0%</span>
+    </div>
 
-<script type="module" src="js/main.js"></script>
+    <canvas id="bg"></canvas>
 
-</body>
+    <div id="content">
+      <nav id="navbar">
+        <a href="#" class="nav-logo">Haj<span>4ever</span></a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#how">How it works</a>
+          <a href="#rules">Rules</a>
+          <a href="#links">Join</a>
+        </div>
+        <a
+          href="https://haj4ever.fillout.com/rsvp"
+          target="_blank"
+          rel="noopener"
+          class="nav-cta"
+          >Submit</a
+        >
+      </nav>
+      <section id="hero">
+        <h1 class="hero-title">Haj<span>4ever</span></h1>
+        <p class="hero-sub">build blåhaj projects &bull; get a blåhaj</p>
+        <div class="hero-actions">
+          <a
+            href="https://haj4ever.fillout.com/rsvp"
+            target="_blank"
+            rel="noopener"
+            class="btn-primary"
+          >
+            RSVP Now
+          </a>
+          <a
+            href="https://hackclub.enterprise.slack.com/archives/C0ATRK4G5NY"
+            target="_blank"
+            rel="noopener"
+            class="btn-ghost"
+          >
+            #haj4ever
+          </a>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section reveal">
+          <span class="section-label">01. what is this</span>
+          <h2 class="section-title">
+            you ship a blåhaj project.<br />we ship you a blåhaj.
+          </h2>
+          <div class="divider"></div>
+          <p class="section-body">
+            Haj4ever is a Hack Club YSWS (You Ship, We Ship). Build anything
+            related to Blåhaj, track your hours with Hackatime, and Hack Club
+            will mail you a real IKEA Blåhaj shark. Free international shipping.
+            No catch.
+          </p>
+        </div>
+      </section>
+
+      <section id="how">
+        <div class="section">
+          <span class="section-label reveal">02. how it works</span>
+          <h2 class="section-title reveal">three steps to your shark.</h2>
+          <div class="cards">
+            <div class="card">
+              <div class="card-title">1. build something</div>
+              <div class="card-body">
+                Make any Blåhaj-related project, software, hardware, art, game,
+                whatever you want. It just has to be made by you, not
+                vibe-coded.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title">2. track your hours</div>
+              <div class="card-body">
+                Log your time using Hackatime. You need around 7-8 hours of
+                tracked work. If you're in a team, everyone needs their own
+                commits and hours.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title">3. get your blåhaj</div>
+              <div class="card-body">
+                Submit your project, we review it, and if it's good Hack Club
+                ships you a real IKEA Blåhaj straight to your door.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rules">
+        <div class="section reveal">
+          <span class="section-label">03. rules</span>
+          <h2 class="section-title">the fine print.</h2>
+          <div class="divider"></div>
+          <div class="rules-list">
+            <div class="rule-item">
+              <div class="rule-dot"></div>
+              Open to teenagers aged 13-18. You'll need to verify your age
+              (student or government ID) before we ship.
+            </div>
+            <div class="rule-item">
+              <div class="rule-dot"></div>
+              Your project has to be Blåhaj-related. Software, hardware, art,
+              anything goes as long as it's themed.
+            </div>
+            <div class="rule-item">
+              <div class="rule-dot"></div>
+              No vibe coding. AI can help (max 30% usage) but the project needs
+              to be mostly yours. Declare any AI use in your submission.
+            </div>
+            <div class="rule-item">
+              <div class="rule-dot"></div>
+              No double-dipping: you can't submit the same project to another
+              Hack Club YSWS.
+            </div>
+            <div class="rule-item">
+              <div class="rule-dot"></div>
+              Teams of up to 5 are cool. Each member needs separate commits and
+              Hackatime hours.
+            </div>
+            <div class="rule-item">
+              <div class="rule-dot"></div>
+              Hack Club covers international shipping. Customs fees depend on
+              your country.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="links">
+        <div class="section reveal">
+          <span class="section-label">04. join in</span>
+          <h2 class="section-title">ready to build?</h2>
+          <div class="divider"></div>
+          <p class="section-body">
+            RSVP to get started, then hop in our Slack channel for updates,
+            help, and to show off what you're making.
+          </p>
+          <div class="links-row">
+            <a
+              href="https://haj4ever.fillout.com/rsvp"
+              target="_blank"
+              rel="noopener"
+              class="btn-primary"
+            >
+              RSVP Now
+            </a>
+            <a
+              href="https://hackclub.enterprise.slack.com/archives/C0ATRK4G5NY"
+              target="_blank"
+              rel="noopener"
+              class="btn-ghost"
+            >
+              #haj4ever on Slack
+            </a>
+            <a
+              href="https://hackclub.enterprise.slack.com/archives/C0ATMEQQ60K"
+              target="_blank"
+              rel="noopener"
+              class="btn-ghost"
+            >
+              #haj4ever-help
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      made with 🦈 by
+      <a
+        href="https://hackclub.enterprise.slack.com/team/U0A6A0J7UE6"
+        target="_blank"
+        rel="noopener"
+        >Flux3tor</a
+      > and <a href="https://vejas.zip" target="_blank" rel="noopener">Vejas</a>
+      for
+      <a href="https://hackclub.com" target="_blank" rel="noopener"
+        >Hack Club</a
+      >
+      &bull; Haj4ever
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if (
+                entry.target.classList.contains("card") ||
+                entry.target.classList.contains("rule-item")
+              ) {
+                const siblings = Array.from(
+                  entry.target.parentElement.children,
+                );
+                const idx = siblings.indexOf(entry.target);
+                setTimeout(
+                  () => entry.target.classList.add("visible"),
+                  idx * 100,
+                );
+              } else {
+                entry.target.classList.add("visible");
+              }
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document
+        .querySelectorAll(".reveal, .card, .rule-item")
+        .forEach((el) => observer.observe(el));
+    </script>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>

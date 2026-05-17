@@ -36,7 +36,7 @@ function useReveal() {
 function SectionLabel({ n, children }: { n: string; children: React.ReactNode }) {
   return (
     <span style={{
-      fontFamily:"'Syne',sans-serif", fontSize:"0.7rem", letterSpacing:"0.25em",
+      fontFamily:"'Instrument Sans',sans-serif", fontSize:"0.7rem", letterSpacing:"0.25em",
       textTransform:"uppercase", color:"var(--accent)", marginBottom:12, display:"block",
     }}>
       {n}. {children}
@@ -47,7 +47,7 @@ function SectionLabel({ n, children }: { n: string; children: React.ReactNode })
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <h2 style={{
-      fontFamily:"'Syne',sans-serif", fontWeight:700,
+      fontFamily:"'Instrument Sans',sans-serif", fontWeight:700,
       fontSize:"clamp(1.8rem,4vw,2.8rem)", lineHeight:1.1, marginBottom:24,
     }}>
       {children}
@@ -74,7 +74,7 @@ export default function Home() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap' );
         *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
         :root {
           --navy:#050d2e; --deep:#0a1640; --blue:#4a90c4; --accent:#6bb8e8;
@@ -115,7 +115,7 @@ export default function Home() {
         .btn-primary {
           display:inline-flex; align-items:center; gap:8px;
           background:var(--blue); color:#fff;
-          font-family:'Syne',sans-serif; font-weight:600; font-size:.9rem; letter-spacing:.04em;
+          font-family:'Instrument Sans',sans-serif; font-weight:600; font-size:.9rem; letter-spacing:.04em;
           padding:14px 28px; border-radius:100px; text-decoration:none; border:none; cursor:pointer;
           transition:transform .2s,box-shadow .2s,background .2s;
           animation:glow 2.5s ease-in-out infinite;
@@ -125,7 +125,7 @@ export default function Home() {
         .btn-ghost {
           display:inline-flex; align-items:center; gap:8px;
           background:var(--glass-bg); color:var(--pale);
-          font-family:'Syne',sans-serif; font-weight:600; font-size:.9rem; letter-spacing:.04em;
+          font-family:'Instrument Sans',sans-serif; font-weight:600; font-size:.9rem; letter-spacing:.04em;
           padding:14px 28px; border-radius:100px; text-decoration:none;
           border:1px solid var(--glass-border); cursor:pointer; backdrop-filter:blur(10px);
           transition:transform .2s,background .2s,color .2s;
@@ -133,7 +133,7 @@ export default function Home() {
         .btn-ghost:hover { background:rgba(107,184,232,0.15); color:var(--white); transform:translateY(-2px); }
 
         .nav-link {
-          font-family:'Syne',sans-serif; font-weight:600; font-size:.82rem; letter-spacing:.04em;
+          font-family:'Instrument Sans',sans-serif; font-weight:600; font-size:.82rem; letter-spacing:.04em;
           color:var(--pale); text-decoration:none; padding:8px 16px; border-radius:100px;
           transition:color .2s,background .2s;
         }
@@ -163,7 +163,7 @@ export default function Home() {
           padding:"10px 10px 10px 24px", zIndex:50, boxSizing:"border-box",
         }}>
           <a href="#" onClick={(e)=>{e.preventDefault();window.scrollTo({top:0,behavior:"smooth"})}}
-            style={{ fontFamily:"'Syne',sans-serif", fontWeight:800, fontSize:"1.15rem", color:"var(--white)", letterSpacing:"-0.02em", textDecoration:"none" }}>
+            style={{ fontFamily:"'Instrument Sans',sans-serif", fontWeight:800, fontSize:"1.15rem", color:"var(--white)", letterSpacing:"-0.02em", textDecoration:"none" }}>
             Haj<span style={{ color:"var(--accent)" }}>4ever</span>
           </a>
 
@@ -184,7 +184,7 @@ export default function Home() {
 
         {/* ── Hero ── */}
         <section id="hero" style={{ minHeight:"100vh", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", textAlign:"center", padding:"0 24px" }}>
-          <h1 style={{ fontFamily:"'Syne',sans-serif", fontWeight:800, fontSize:"clamp(4rem,12vw,8rem)", lineHeight:1, letterSpacing:"-0.03em", color:"var(--white)", opacity:0, animation:"fadeUp 0.9s ease 0.3s forwards" }}>
+          <h1 style={{ fontFamily:"'Instrument Sans',sans-serif", fontWeight:800, fontSize:"clamp(4rem,12vw,8rem )", lineHeight:1, letterSpacing:"-0.03em", color:"var(--white)", opacity:0, animation:"fadeUp 0.9s ease 0.3s forwards" }}>
             Haj<span style={{ color:"var(--accent)" }}>4ever</span>
           </h1>
           <p style={{ fontFamily:"'Instrument Sans',sans-serif", fontStyle:"italic", fontSize:"clamp(.95rem,2vw,1.15rem)", color:"var(--pale)", marginTop:20, opacity:0, animation:"fadeUp 0.9s ease 0.55s forwards" }}>
@@ -200,10 +200,11 @@ export default function Home() {
         <section id="about">
           <div className="reveal section-inner" style={{ maxWidth:900, margin:"0 auto", padding:"80px 24px" }}>
             <SectionLabel n="01">what is this</SectionLabel>
-            <SectionTitle>you ship a blåhaj project.<br />we ship you a blåhaj.</SectionTitle>
+            <SectionTitle>you ship a blåhaj project.  
+we ship you a blåhaj.</SectionTitle>
             <Divider />
             <SectionBody>
-              Haj4ever is a Hack Club YSWS (You Ship, We Ship). Build anything related to Blåhaj,
+              Haj4ever is a Hack Club YSWS (You Ship, We Ship ). Build anything related to Blåhaj,
               track your hours with Hackatime, and Hack Club will mail you a real IKEA Blåhaj shark.
               Free international shipping. No catch.
             </SectionBody>
@@ -214,7 +215,7 @@ export default function Home() {
         <section id="how">
           <div className="section-inner" style={{ maxWidth:900, margin:"0 auto", padding:"80px 24px" }}>
             <SectionLabel n="02">how it works</SectionLabel>
-            <h2 className="reveal" style={{ fontFamily:"'Syne',sans-serif", fontWeight:700, fontSize:"clamp(1.8rem,4vw,2.8rem)", lineHeight:1.1, marginBottom:40 }}>
+            <h2 className="reveal" style={{ fontFamily:"'Instrument Sans',sans-serif", fontWeight:700, fontSize:"clamp(1.8rem,4vw,2.8rem)", lineHeight:1.1, marginBottom:40 }}>
               three steps to your shark.
             </h2>
             <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))", gap:16 }}>
@@ -224,7 +225,7 @@ export default function Home() {
                 { title:"3. get your blåhaj",  body:"Submit your project, we review it, and if it's good Hack Club ships you a real IKEA Blåhaj straight to your door." },
               ].map((c) => (
                 <div key={c.title} className="card">
-                  <div style={{ fontFamily:"'Syne',sans-serif", fontWeight:700, fontSize:"1rem", marginBottom:8, color:"var(--white)" }}>{c.title}</div>
+                  <div style={{ fontFamily:"'Instrument Sans',sans-serif", fontWeight:700, fontSize:"1rem", marginBottom:8, color:"var(--white)" }}>{c.title}</div>
                   <div style={{ fontSize:".88rem", color:"var(--pale)", lineHeight:1.6 }}>{c.body}</div>
                 </div>
               ))}
@@ -274,7 +275,7 @@ export default function Home() {
         </section>
 
         {/* ── Footer ── */}
-        <footer style={{ textAlign:"center", padding:"40px 24px", fontSize:".8rem", color:"rgba(174,214,240,0.4)", letterSpacing:".05em", position:"relative", zIndex:1 }}>
+        <footer style={{ textAlign:"center", padding:"40px 24px", fontSize:".8rem", color:"rgba(174,214,240,0.4 )", letterSpacing:".05em", position:"relative", zIndex:1 }}>
           made with 🦈 by{" "}
           <a href="https://hackclub.enterprise.slack.com/team/U0A6A0J7UE6" target="_blank" rel="noopener">Flux3tor</a>{" "}and{" "}
           <a href="https://vejas.zip" target="_blank" rel="noopener">Vejas</a>{" "}for{" "}
@@ -283,5 +284,5 @@ export default function Home() {
 
       </div>
     </>
-  );
+   );
 }

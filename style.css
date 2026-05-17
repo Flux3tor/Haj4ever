@@ -55,6 +55,84 @@ body {
 section { pointer-events: none; }
 a, button, .card { pointer-events: auto; }
 
+#navbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 860px;
+  background: rgba(5, 13, 46, 0.72);
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px 10px 24px;
+  z-index: 50;
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-links a {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--pale);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 100px;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-links a:hover {
+  color: var(--white);
+  background: rgba(107, 184, 232, 0.1);
+}
+
+.nav-cta {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 100px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+  animation: glow 2.5s ease-in-out infinite;
+}
+.nav-cta:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  #navbar { padding: 10px 10px 10px 20px; }
+}
+
 #hero {
   min-height: 100vh;
   display: flex;

@@ -29,6 +29,7 @@ body{
   background:url('images/vector.png') center center / 30% auto repeat;
   transform:rotate(10deg);
   animation: drift 25s linear infinite;
+  opacity: 0.1;
 }
 
 @keyframes drift{
